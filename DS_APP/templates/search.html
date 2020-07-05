@@ -1,0 +1,40 @@
+{%extends 'basic.html'%}
+{% load static%}
+{% block title%}Search Report{%endblock%}
+
+{% block body%}
+<div style="background-size: cover;">
+    <form action="/home/result/" method='post'>
+        {% csrf_token %}
+        <center>
+            <div style="margin-top: 2%;">
+                <input
+                    style="width:auto;padding: 6px;cursor: pointer;color:#252525;background-color: white;border: solid #252525;border-radius: 12px;"
+                    id="sr" type="text" name="sr" placeholder="Enter Your Test Detail " title="Enter Your Test Id / Name / Email / Mobile No." required>
+
+                <!-- <a href="/home/result/" style="text-decoration: none;color:transparent;"> <img src="{% static 'mic.jpg'%}"
+                    alt="Microphone" width="30" height="30" style="border-radius: 20px;margin-left: 10px;"></a><i class="fas fa-microphone"></i> -->
+
+
+                <a href="/home/result/" style="text-decoration: none;color:transparent;"><input type="submit"
+                        value="Search Now" class="btn btn-danger"
+                        style="width: auto;font-weight: bold;margin-left: 10px;"></input></a>
+
+                <a href="/" style="text-decoration: none;color:transparent;"><input type="button" value="Go Back"
+                        class="btn btn-warning" style="width: auto;font-weight: bold;margin-left: 10px;"></input></a>
+
+            </div></i>
+
+    </form>
+    <div style="margin-top: 3%;width: auto ;">
+        <form action="/home/sresult/" method='post'>
+            <a href="/home/sresult/" style="text-decoration: none;color:transparent;">
+                <i class="fa fa-microphone" style="color: black;height:auto;width: auto;border-radius: 20px;"></i></a>
+            <p style="color: red;width: auto;font-weight: bolder;">Search By Your Voice</p>
+        </form>
+    </div>
+    </center>
+</div>
+
+
+{%endblock%}

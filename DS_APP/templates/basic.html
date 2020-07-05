@@ -1,0 +1,62 @@
+{% load static%}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>{% block title%}{%endblock%}</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <script src="https://kit.fontawesome.com/3b4f886c56.js" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap4/bootstrap.min.css'%}">
+  <link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css'%}" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.css'%}">
+  <link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.theme.default.css'%}">
+  <link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/animate.css'%}">
+  <link rel="stylesheet" type="text/css" href="{% static 'styles/main_styles.css'%}">
+  <link rel="stylesheet" type="text/css" href="{% static 'styles/responsive.css'%}">
+
+
+  <style rel="stylesheet" type="text/css">
+    ul li a:hover,
+    a:hover {
+      color: black;
+    }
+  </style>
+
+</head>
+
+<body style="background-image: url({% static 'bgg.jpg'%});
+background-repeat: no-repeat;
+background-attachment: fixed;
+background-size:cover;opacity: 0.7;">
+
+<center>
+  <h1 style="margin-top: 4%;color:#252525;">Welcome To HealtyCamp</h1>
+</center>
+<br>
+
+
+  {% block body%}{%endblock%}
+  <br>
+  <center>
+    <footer>
+      <h5 style="color: black;">HealtyCamp &copy;Copyright 2020. Created By Karan Dave</h5>
+    </footer>
+  </center>
+  
+
+</body>
+
+</html>

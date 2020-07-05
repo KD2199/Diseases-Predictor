@@ -1,0 +1,87 @@
+{%extends 'basic.html'%}
+{% load static%}
+{% block title%}Record Page{%endblock%}
+
+{% block body%}
+
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
+    th,
+    td {
+        padding: 10px;
+        text-align: center;
+        color: black;
+
+    }
+</style>
+
+<body>
+    <div style="margin-top: 2%;width: auto ;">
+        {% for i in obj %}
+        <center>
+
+            <b>
+                <h3 style="color: red;">Your Report</h3>
+            </b>
+            <br>
+            <table style="width:auto;border-c">
+
+                <tr>
+                    <th>Patient_Name</th>
+                    <th>Patient_Id</th>
+                    <th>Email</th>
+                    <th>Mobile_No</th>
+                    <th>Mean_radius</th>
+                </tr>
+
+                <tr>
+                    <td>{{i.Patient_Name}}</td>
+                    <td>{{i.Patient_Id}}</td>
+                    <td>{{i.Email}}</td>
+                    <td>{{i.Mobile_No}}</td>
+                    <td>{{i.mean_radius}}</td><br><br>
+                </tr>
+
+                <tr>
+                    <th>Mean_texture</th>
+                    <th>Mean_perimeter</th>
+                    <th>Mean_area</th>
+                    <th>Mean_smoothness Date</th>
+                    <th>Test_Result</th>
+                </tr>
+
+                <tr>
+                    <td>{{i.mean_texture}}</td>
+                    <td>{{i.mean_perimeter}}</td>
+                    <td>{{i.mean_area}}</td>
+                    <td>{{i.mean_area}}</td>
+                    <td>{{i.Test_Result}}</td>
+                </tr>
+
+            </table><br>
+
+
+            <a href="/" style="text-decoration: none;color:transparent;"><input type="button" value="Go To Homepage"
+                    class="btn btn-warning" style="width: auto;font-weight: bold;margin-left: 10px;"></input></a>
+        </center>
+
+
+        {% empty %}
+        <center><b>
+                <h3 style="color: red;">Record Not Found!!</h3>
+            </b><br>
+            <a href="/" style="text-decoration: none;color:transparent;"><input type="button" value="Go To Homepage"
+                    class="btn btn-warning" style="width: auto;font-weight: bold;margin-left: 10px;"></input></a>
+        </center>
+
+        {% endfor %}
+
+    </div>
+
+    {%endblock%}

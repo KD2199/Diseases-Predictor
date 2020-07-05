@@ -1,0 +1,79 @@
+{%extends 'basic.html'%}
+{% load static%}
+{% block title%}Homepage{%endblock%}
+
+{% block body%}
+<center>
+  <div style="margin-top: 2%;width: auto ;">
+    {% if messages %}
+    {% for message in messages %}
+
+    <h1 style="color:red;font-size: xx-large;background-color: whitesmoke;width:50%;border-radius: 20px;height: auto;">
+      {{ message }}</h1>
+
+    {% endfor %}
+    {% endif %}
+    <br>
+
+    <h5
+      style="margin-top: 4%;color: black;font-size: x-large;background-color: whitesmoke;width: 60%;border-radius: 20px;height: auto;">
+      Enter Your Report Data In Below Form</h5>
+  
+    <div class="modal-body">
+      <form action="home/" method='post'>
+        {% csrf_token %}
+
+        <div>
+          <input
+            style="width:auto;padding: 6px;cursor: pointer;color:#252525;background-color: white;border: solid #252525;"
+            id="uname" type="text" name="uname" placeholder="Enter UserName" title="Enter UserName" required>
+          <input
+            style="width:auto;padding: 6px;cursor: pointer;color:#252525;background-color: white;margin-top: 10px;border: solid #252525;"
+            id="contact" type="tel" name="contact" placeholder="Enter Contact Number " title="Enter Contact Number"
+            required>
+        </div>
+        <div>
+          <input
+            style="width:auto;padding: 6px;cursor: pointer;color:#252525;background-color: white;margin-top: 10px;border: solid #252525;"
+            id="email" type="email" name="email" placeholder="Enter Email Id " title="Enter Email Id " required>
+          <input
+            style="width:auto;padding: 6px;cursor: pointer;color:#252525;background-color: white;margin-top: 10px;border: solid #252525;"
+            id="age" type="number" name="age" placeholder="Enter Your Age " title="Enter Your Age " required>
+        </div><br>
+
+        <div>
+          <input
+            style="width:auto;padding: 6px;cursor: pointer;color:#252525;background-color: white;margin-top: 10px;border: solid #252525;"
+            id="mean_radius" type="text" name="mean_radius" placeholder="mean_radius" title="mean_radius" required>
+          <input
+            style="width:auto;padding: 6px;cursor: pointer;color:#252525;background-color: white;margin-top: 10px;border: solid #252525;"
+            id="mean_texture" type="text" name="mean_texture" placeholder="mean_texture" title="mean_texture" required>
+
+          <input
+            style="width:auto;padding: 6px;cursor: pointer;color:#252525;background-color: white;margin-top: 10px;border: solid #252525;"
+            id="mean_perimeter" type="text" name="mean_perimeter" placeholder="mean_perimeter" title="mean_perimeter"
+            required>
+          <input
+            style="width:auto;padding: 6px;cursor: pointer;color:#252525;background-color: white;margin-top: 10px;border: solid #252525;"
+            id="mean_area" type="text" name="mean_area" placeholder="mean_area" title="mean_area" required>
+          <input
+            style="width:auto;padding: 6px;cursor: pointer;color:#252525;background-color: white;margin-top: 10px;border: solid #252525;"
+            id="mean_smoothness" type="text" name="mean_smoothness" placeholder="mean_smoothness"
+            title="mean_smoothness" required>
+
+        </div><br>
+
+
+        <button type="submit" class="btn btn-outline-danger" id="loginsubmit"
+          style="width: auto;font-weight: bolder;">Check Result</button>
+        <br>
+
+      </form>
+    </div>
+    <a href="/home/search/" style="text-decoration: none;color:transparent;"><input type="submit"
+        value="See Your Previous Test Reports" class="btn btn-warning"
+        style="width: auto;font-weight: bold;"></input></a>
+  </div>
+</center>
+
+{%endblock%}
